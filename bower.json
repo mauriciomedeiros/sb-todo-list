@@ -1,0 +1,23 @@
+{
+  "name": "sb-todo-list",
+  "version": "1.0.0",
+  "authors": [
+    "Maurício Medeiros <mauriciomedeiros.05@gmail.com>"
+  ],
+  "description": "Project for challenge SB",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "dependencies": {
+     "angular": "1.5.3",
+     "bootstrap": "3.3.6"
+  },
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

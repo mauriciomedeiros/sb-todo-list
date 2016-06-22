@@ -1,0 +1,17 @@
+{
+  "name": "sb-todo-list",
+  "version": "1.0.0",
+  "description": "Project for challenge SB",
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "author": "Maurício Medeiros <mauriciomedeiros.05@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "bower": "1.7.9",
+    "gulp": "3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.2"
+  }
+}
