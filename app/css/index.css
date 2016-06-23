@@ -9,3 +9,17 @@
 .form-control {
 	margin-bottom: 5px;
 }
+
+.require-field {
+	position: relative;
+}
+
+.require-field:after {
+	position: absolute;
+	content: "\2217";
+	color: red;
+	font-weight: bold;
+	margin-right: 5px;
+	margin-top: -10px;
+	font-size: 20px;
+}
