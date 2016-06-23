@@ -7,6 +7,9 @@
 
    function TodoListController($scope){
       $scope.todo = {};
+      $scope.isSave = false;
+      $scope.isUpdate = false;
+      $scope.isDelete = false;
 
       $scope.categoryList = [
          {
@@ -44,6 +47,9 @@
 
       $scope.cancel = function(){
          $scope.isNewOrEdit = false;
+         $scope.isUpdate = false;
+         $scope.isSave = false;
+         $scope.isDelete = false;
          delete $scope.todo;
       };
 
@@ -53,9 +59,11 @@
                if($scope.todoList[index].id == todo.id)
                   $scope.todoList[index] = todo; break;
             }
+            $scope.isUpdate = true;
          }else{
             todo.id = $scope.todoList.length + 1;
             $scope.todoList.push(todo);
+            $scope.isSave = true;
          }
          delete $scope.todo;
          $scope.isNewOrEdit = false;
@@ -68,6 +76,7 @@
 
       $scope.delete = function(todo){
          $scope.todoList.splice($scope.todoList.indexOf(todo), 1);
+         $scope.isDelete = true;
       };
    };
 })();
