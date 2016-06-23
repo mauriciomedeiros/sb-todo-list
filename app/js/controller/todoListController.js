@@ -23,13 +23,13 @@
          {
             id: 1,
             dateCreate: new Date("01/06/2016"),
-            name:"Test 1",
+            name:"Reunion to CEO",
             category: $scope.categoryList[0]
          },
          {
             id: 2,
             dateCreate: new Date("03/06/2016"),
-            name:"Test 2",
+            name:"Study business plan",
             category: $scope.categoryList[1]
          }
       ];
@@ -64,6 +64,10 @@
       $scope.edit = function(todo){
          $scope.todo = todo;
          $scope.isNewOrEdit = true;
+      };
+
+      $scope.delete = function(todo){
+         $scope.todoList.splice($scope.todoList.indexOf(todo), 1);
       };
    };
 })();
