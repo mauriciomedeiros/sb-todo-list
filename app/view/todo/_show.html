@@ -1,3 +1,4 @@
+<h2 class="text-left">To-Do List</h2>
 <table class="table table-condensed">
    <tr>
       <th class="text-center"></th>
@@ -12,8 +13,8 @@
          <input type="checkbox"/>
       </td>
       <td class="text-center"></td>
-      <td class="text-left">{{todo.description}}</td>
-      <td class="text-left">{{todo.category}}</td>
+      <td class="text-left">{{todo.name}}</td>
+      <td class="text-left">{{todo.category.name}}</td>
       <td class="text-center">
          <button class=" btn btn-info bt-lg ">
             <span class="glyphicon glyphicon-pencil"></span>
@@ -26,3 +27,8 @@
       </td>
    </tr>
 </table>
+<div class="text-left">
+   <button class="btn btn-primary bt-lg" ng-click="new()">
+      <span class="glyphicon glyphicon-plus"></span> New
+   </button>
+</div>

@@ -6,23 +6,37 @@
    TodoListController.$inject = ['$scope'];
 
    function TodoListController($scope){
-      $scope.todoList = [{description:"Test 1", category: "Home"},
-      {description:"Test 2", category: "Work"}];
+      $scope.todo = {};
+
       $scope.categoryList = [
          {
-            id: 1,
             name: "Work"
          },
          {
-            id: 2,
             name: "Home"
          }
       ];
 
-      init();
+      $scope.todoList = [{name:"Test 1", category: $scope.categoryList[0]},
+      {name:"Test 2", category: $scope.categoryList[1]}];
 
-      function init(){
-         console.log("teste");
+      $scope.isNewOrEdit = false;
+
+      $scope.new = function(){
+         $scope.todo = {};
+         $scope.isNewOrEdit = true;
+         $scope.todo.dateCreate = new Date();
+      };
+
+      $scope.cancel = function(){
+         $scope.isNewOrEdit = false;
+         delete $scope.todo;
+      };
+
+      $scope.save = function(todo){
+         $scope.todoList.push(todo);
+         delete $scope.todo;
+         $scope.isNewOrEdit = false;
       };
    };
 })();
