@@ -10,7 +10,7 @@
 </success-msg>
 
 
-<table class="table table-condensed">
+<table class="table">
    <tr>
       <th class="text-center"></th>
       <th class="text-left">Created</th>
@@ -18,20 +18,26 @@
       <th class="text-left">Category</th>
       <th class="text-center"></th>
       <th class="text-center"></th>
+      <th class="text-center"></th>
    </tr>
    <tr ng-repeat="todo in todoList">
-      <td class="text-center" width="5%">
+      <td class="text-center" style="vertical-align:middle" width="5%">
          <input type="checkbox"/>
       </td>
-      <td class="text-left"  width="10%">{{todo.dateCreate | date: 'dd/MM/yyyy'}}</td>
-      <td class="text-left">{{todo.name}}</td>
-      <td class="text-left"  width="15%">{{todo.category.name}}</td>
-      <td class="text-center" width="5%">
+      <td class="text-left" style="vertical-align:middle" width="10%">{{todo.dateCreate | date: 'dd/MM/yyyy'}}</td>
+      <td class="text-left" style="vertical-align:middle">{{todo.name}}</td>
+      <td class="text-left" style="vertical-align:middle" width="15%">{{todo.category.name}}</td>
+      <td class="text-center" style="vertical-align:middle" width="5%">
+         <button class=" btn btn-default bt-sm" ng-click="view(todo)">
+            <span class="glyphicon glyphicon-eye-open"></span>
+         </button>
+      </td>
+      <td class="text-center" style="vertical-align:middle" width="5%">
          <button class=" btn btn-info bt-sm" ng-click="edit(todo)">
             <span class="glyphicon glyphicon-pencil"></span>
          </button>
       </td>
-      <td class="text-center"  width="5%">
+      <td class="text-center" style="vertical-align:middle" width="5%">
          <button class="btn btn-danger bt-sm" ng-click="delete(todo)">
             <span class="glyphicon glyphicon-trash"></span>
          </button>

@@ -1,42 +1,49 @@
-<form name="todoForm" class="form-horizontal">
-   <h2 class="text-left">New to-do</h2>
+<fieldset ng-disabled="isView">
+   <form name="todoForm" class="form-horizontal">
+      <h2 class="text-left">New to-do</h2>
 
-   <div class="form-group">
-      <label class="col-sm-2 control-label">Date created: </label>
-      <div class="col-sm-10">
-         <input type="text" class="form-control" ng-value="todo.dateCreate | date: 'dd/MM/yyyy'" ng-disabled="true"/>
+      <div class="form-group">
+         <label class="col-sm-2 control-label">Date created: </label>
+         <div class="col-sm-10">
+            <input type="text" class="form-control" ng-value="todo.dateCreate | date: 'dd/MM/yyyy'" ng-disabled="true"/>
+         </div>
       </div>
-   </div>
-   <div class="form-group">
-      <label class="col-sm-2 control-label require-field"> Name: </label>
-      <div class="col-sm-10">
-         <input type="text" class="form-control" ng-model="todo.name" name="name" placeholder="Ex: Reunion" ng-required="true" ng-minlength="3" ng-maxlength="20"/>
+      <div class="form-group">
+         <label class="col-sm-2 control-label require-field"> Name: </label>
+         <div class="col-sm-10">
+            <input type="text" class="form-control" ng-model="todo.name" name="name" placeholder="Ex: Reunion" ng-required="true" ng-minlength="3" ng-maxlength="20"/>
+         </div>
       </div>
-   </div>
-   <div class="form-group">
-      <label class="col-sm-2 control-label require-field "> Category: </label>
-      <div class="col-sm-10">
-         <select class="form-control" ng-model="todo.category" id="category" name="category" ng-options="category as category.name for category in categoryList" ng-required="true">
-   			<option value="">Select the category</option>
-   		</select>
+      <div class="form-group">
+         <label class="col-sm-2 control-label require-field "> Category: </label>
+         <div class="col-sm-10">
+            <select class="form-control" ng-model="todo.category" id="category" name="category" ng-options="category as category.name for category in categoryList" ng-required="true">
+      			<option value="">Select the category</option>
+      		</select>
+         </div>
       </div>
-   </div>
-   <div class="form-group">
-      <label class="col-sm-2 control-label"> Description: </label>
-      <div class="col-sm-10">
-         <textarea type="text" class="selectpicker show-tick form-control" ng-model="todo.description" name="name" placeholder="Type a description" ng-maxlength="200"></textarea>
+      <div class="form-group">
+         <label class="col-sm-2 control-label"> Description: </label>
+         <div class="col-sm-10">
+            <textarea type="text" class="selectpicker show-tick form-control" ng-model="todo.description" name="name" placeholder="Type a description" ng-maxlength="200"></textarea>
+         </div>
       </div>
-   </div>
-   <div class="text-right">
-      <label style=" color: red;">*</label> Required fields
-   </div>
-</form>
-<div class="text-left">
-   <button class="btn btn-success bt-lg" ng-click="save(todo)"  ng-disabled="todoForm.$invalid">
-      <span class="glyphicon glyphicon-save"></span> Save
-   </button>
+      <div class="text-right">
+         <label style=" color: red;">*</label> Required fields
+      </div>
+   </form>
+   <div class="text-left" ng-hide="isView">
+      <button class="btn btn-success bt-lg" ng-click="save(todo)"  ng-disabled="todoForm.$invalid">
+         <span class="glyphicon glyphicon-save"></span> Save
+      </button>
 
-   <button class="btn btn-danger bt-lg" ng-click="cancel()">
-      <span class=" glyphicon glyphicon-ban-circle"></span> Cancel
+      <button class="btn btn-danger bt-lg" ng-click="cancel()">
+         <span class=" glyphicon glyphicon-ban-circle"></span> Cancel
+      </button>
+   </div>
+</fieldset>
+<div class="text-left" ng-show="isView">
+   <button class="btn btn-primary bt-lg" ng-click="cancel()">
+      <span class="glyphicon glyphicon-arrow-left"></span> Back
    </button>
 </div>

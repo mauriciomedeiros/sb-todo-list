@@ -50,6 +50,7 @@
          $scope.isUpdate = false;
          $scope.isSave = false;
          $scope.isDelete = false;
+         $scope.isView= false
          delete $scope.todo;
       };
 
@@ -77,6 +78,12 @@
       $scope.delete = function(todo){
          $scope.todoList.splice($scope.todoList.indexOf(todo), 1);
          $scope.isDelete = true;
+      };
+
+      $scope.view = function(todo){
+         $scope.todo = todo;
+         $scope.isNewOrEdit = true;
+         $scope.isView= true;
       };
    };
 })();
