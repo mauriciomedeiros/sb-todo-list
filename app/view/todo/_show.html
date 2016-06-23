@@ -2,8 +2,8 @@
 <table class="table table-condensed">
    <tr>
       <th class="text-center"></th>
-      <th class="text-left">Date</th>
-      <th class="text-left">Description</th>
+      <th class="text-left">Created</th>
+      <th class="text-left">Name</th>
       <th class="text-left">Category</th>
       <th class="text-center"></th>
       <th class="text-center"></th>
@@ -12,11 +12,11 @@
       <td class="text-center">
          <input type="checkbox"/>
       </td>
-      <td class="text-center"></td>
+      <td class="text-left">{{todo.dateCreate | date: 'dd/MM/yyyy'}}</td>
       <td class="text-left">{{todo.name}}</td>
       <td class="text-left">{{todo.category.name}}</td>
       <td class="text-center">
-         <button class=" btn btn-info bt-lg ">
+         <button class=" btn btn-info bt-lg" ng-click="edit(todo)">
             <span class="glyphicon glyphicon-pencil"></span>
          </button>
       </td>

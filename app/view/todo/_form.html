@@ -16,7 +16,7 @@
    <div class="form-group">
       <label class="col-sm-2 control-label"> Category: </label>
       <div class="col-sm-10">
-         <select class="form-control" ng-model="todo.category" name="category" ng-options="category.name for category in categoryList | orderBy:'name'" ng-required="true">
+         <select class="form-control" ng-model="todo.category" id="category" name="category" ng-options="category as category.name for category in categoryList">
    			<option value="">Select the category</option>
    		</select>
       </div>

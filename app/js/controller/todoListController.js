@@ -10,15 +10,29 @@
 
       $scope.categoryList = [
          {
+            id: 1,
             name: "Work"
          },
          {
+            id:2,
             name: "Home"
          }
       ];
 
-      $scope.todoList = [{name:"Test 1", category: $scope.categoryList[0]},
-      {name:"Test 2", category: $scope.categoryList[1]}];
+      $scope.todoList = [
+         {
+            id: 1,
+            dateCreate: new Date("01/06/2016"),
+            name:"Test 1",
+            category: $scope.categoryList[0]
+         },
+         {
+            id: 2,
+            dateCreate: new Date("03/06/2016"),
+            name:"Test 2",
+            category: $scope.categoryList[1]
+         }
+      ];
 
       $scope.isNewOrEdit = false;
 
@@ -34,9 +48,22 @@
       };
 
       $scope.save = function(todo){
-         $scope.todoList.push(todo);
+         if(todo.id){
+            for(var index in $scope.todoList){
+               if($scope.todoList[index].id == todo.id)
+                  $scope.todoList[index] = todo; break;
+            }
+         }else{
+            todo.id = $scope.todoList.length + 1;
+            $scope.todoList.push(todo);
+         }
          delete $scope.todo;
          $scope.isNewOrEdit = false;
+      };
+
+      $scope.edit = function(todo){
+         $scope.todo = todo;
+         $scope.isNewOrEdit = true;
       };
    };
 })();
