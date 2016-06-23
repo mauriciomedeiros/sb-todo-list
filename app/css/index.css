@@ -14,6 +14,10 @@
 	position: relative;
 }
 
+.bold {
+	font-weight: bold;
+}
+
 .require-field:after {
 	position: absolute;
 	content: "\2217";

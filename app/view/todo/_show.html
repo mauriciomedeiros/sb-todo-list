@@ -20,11 +20,11 @@
       <th class="text-center"></th>
       <th class="text-center"></th>
    </tr>
-   <tr ng-repeat="todo in todoList">
+   <tr ng-class="{success: todo.check, bold: todo.check}" ng-repeat="todo in todoList">
       <td class="text-center" style="vertical-align:middle" width="5%">
-         <input type="checkbox"/>
+         <input type="checkbox" ng-model="todo.check"/>
       </td>
-      <td class="text-left" style="vertical-align:middle" width="10%">{{todo.dateCreate | date: 'dd/MM/yyyy'}}</td>
+      <td class="text-left" style="vertical-align:middle" width="15%">{{todo.dateCreate | date: 'dd/MM/yyyy'}}</td>
       <td class="text-left" style="vertical-align:middle">{{todo.name}}</td>
       <td class="text-left" style="vertical-align:middle" width="15%">{{todo.category.name}}</td>
       <td class="text-center" style="vertical-align:middle" width="5%">
@@ -33,12 +33,12 @@
          </button>
       </td>
       <td class="text-center" style="vertical-align:middle" width="5%">
-         <button class=" btn btn-info bt-sm" ng-click="edit(todo)">
+         <button class=" btn btn-info bt-sm" ng-click="edit(todo)" ng-disabled="todo.check">
             <span class="glyphicon glyphicon-pencil"></span>
          </button>
       </td>
       <td class="text-center" style="vertical-align:middle" width="5%">
-         <button class="btn btn-danger bt-sm" ng-click="delete(todo)">
+         <button class="btn btn-danger bt-sm" ng-click="delete(todo)" ng-disabled="todo.check">
             <span class="glyphicon glyphicon-trash"></span>
          </button>
       </td>
