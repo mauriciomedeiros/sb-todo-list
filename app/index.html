@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todo-list">
    <head>
       <meta charset="utf-8">
-      <title>Todo-list</title>
+      <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="css/index.css"/>
+      <title>To-do list</title>
    </head>
    <body>
-      Todo-list
+      <div class="container">
+         <div ng-view></div>
+      </div>
+
+      <script src="lib/angular/angular.min.js"> </script>
+      <script src="lib/angular-route/angular-route.js"></script>
+      <script src="js/main.js"> </script>
+      <script src="js/config/routerConfig.js"></script>
+      <script src="js/controller/todoListController.js"> </script>
    </body>
 </html>

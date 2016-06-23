@@ -1,0 +1,28 @@
+<table class="table table-condensed">
+   <tr>
+      <th class="text-center"></th>
+      <th class="text-left">Date</th>
+      <th class="text-left">Description</th>
+      <th class="text-left">Category</th>
+      <th class="text-center"></th>
+      <th class="text-center"></th>
+   </tr>
+   <tr ng-repeat="todo in todoList">
+      <td class="text-center">
+         <input type="checkbox"/>
+      </td>
+      <td class="text-center"></td>
+      <td class="text-left">{{todo.description}}</td>
+      <td class="text-left">{{todo.category}}</td>
+      <td class="text-center">
+         <button class=" btn btn-info bt-lg ">
+            <span class="glyphicon glyphicon-pencil"></span>
+         </button>
+      </td>
+      <td class="text-center">
+         <button class="btn btn-danger bt-lg ">
+            <span class="glyphicon glyphicon-trash"></span>
+         </button>
+      </td>
+   </tr>
+</table>
