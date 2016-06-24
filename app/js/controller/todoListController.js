@@ -11,6 +11,8 @@
       $scope.isUpdate = false;
       $scope.isDelete = false;
 
+      $scope.modalShown = false;
+
       $scope.categoryList = [
          {
             id: 1,
@@ -76,8 +78,9 @@
       };
 
       $scope.delete = function(todo){
-         $scope.todoList.splice($scope.todoList.indexOf(todo), 1);
-         $scope.isDelete = true;
+         if(!$scope.modalShown)
+            $scope.modalShown = !$scope.modalShown;
+         $scope.todoSelectForDelete = todo;
       };
 
       $scope.view = function(todo){

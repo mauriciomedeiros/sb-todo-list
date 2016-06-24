@@ -38,7 +38,7 @@
          </button>
       </td>
       <td class="text-center" style="vertical-align:middle" width="5%">
-         <button class="btn btn-danger bt-sm" ng-click="delete(todo)" ng-disabled="todo.check">
+         <button class="btn btn-danger bt-sm" ng-click="delete(todo)" ng-disabled="todo.check" data-toggle="modal" data-target="#myModal">
             <span class="glyphicon glyphicon-trash"></span>
          </button>
       </td>
@@ -50,3 +50,6 @@
       <span class="glyphicon glyphicon-plus"></span> New
    </button>
 </div>
+
+<alert-msg>
+</alert-msg>
